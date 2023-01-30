@@ -3,9 +3,11 @@ name: Generate docs with Doxygen
 on: 
   push:
     branches:
+      - "main"
       - "docs"
   pull_request:
     branches:
+      - "main"
       - "docs"
 
 jobs:
@@ -41,6 +43,6 @@ jobs:
       - name: Commit
         run: |
           git checkout docs
-          git add docs_sphinx/*
-          git commit -m "Build new docs with sphinx"
+          git add docs_doxygen/
+          git commit -m "Generate docs with Doxygen"
           git push origin docs -f

@@ -1,11 +1,13 @@
-name: Create docs with Sphinx
+name: Generate docs with Sphinx
 
 on: 
   push:
     branches:
+      - "main"
       - "docs"
   pull_request:
     branches:
+      - "main"
       - "docs"
 
 jobs:
@@ -42,6 +44,6 @@ jobs:
       - name: Commit
         run: |
           git switch docs
-          git add docs_sphinx/*
-          git commit -m "Build new docs with sphinx"
+          git add docs_sphinx/
+          git commit -m "Generate new docs with Sphinx"
           git push origin docs -f
