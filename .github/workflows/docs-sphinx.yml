@@ -39,7 +39,7 @@ jobs:
 
       - name: Commit
         run: |
-          git switch -c docs
+          git switch docs
           git add docs_sphinx/*
           git commit -m "Build new docs with sphinx"
           git push origin docs -f
