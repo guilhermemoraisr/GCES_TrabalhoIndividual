@@ -9,36 +9,36 @@ on:
       - "docs"
 
 jobs:
-  docs:
+  docs-doxygen:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: "3.9"
+
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Install Doxygen
-      run: |
-        sudo apt-get install doxygen
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
 
-    - name: Run Doxygen
-      run: |
-        cd docs_doxygen
-        doxygen -g
-        doxygen Doxyfile
+      - name: Install Doxygen
+        run: |
+          sudo apt-get install doxygen
 
-    - name: Setup git config
-      run: |
-        git config user.name "GitHub Actions Bot"
-        git config user.email "<>"
+      - name: Run Doxygen
+        run: |
+          cd docs_doxygen
+          doxygen -g
+          doxygen Doxyfile
 
-    - name: Commit
-      run: |
-        git switch -c docs
-        git add docs_sphinx/*
-        git commit -m "Build new docs with sphinx"
-        git push origin docs -f
+      - name: Setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: Commit
+        run: |
+          git switch -c docs
+          git add docs_sphinx/*
+          git commit -m "Build new docs with sphinx"
+          git push origin docs -f
