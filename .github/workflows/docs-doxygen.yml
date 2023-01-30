@@ -42,7 +42,7 @@ jobs:
 
       - name: Commit
         run: |
-          git checkout docs
+          git switch -c docs
           git add docs_doxygen/
           git commit -m "Generate docs with Doxygen"
           git push origin docs -f
