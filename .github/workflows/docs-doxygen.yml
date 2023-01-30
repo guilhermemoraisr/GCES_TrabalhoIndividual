@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -38,7 +40,7 @@ jobs:
 
       - name: Commit
         run: |
-          git switch docs
+          git checkout docs
           git add docs_sphinx/*
           git commit -m "Build new docs with sphinx"
           git push origin docs -f
