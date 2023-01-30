@@ -23,7 +23,7 @@
   <td id="projectalign">
    <div id="projectname">GCES_TrabalhoIndividual
    </div>
-   <div id="projectbrief">Trabalho Individual de GCES 2022-2</div>
+   <div id="projectbrief">Trabalho Individual de GCES 2022/2</div>
   </td>
  </tr>
  </tbody>
@@ -100,7 +100,6 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">A class for calculating metrics to indicate key smashing behavior in a text.
-
 Key smashing is the act of typing on a keyboard in a rapid and uncontrolled manner,
 often resulting in a series of random characters being entered into a document or text field.
 </pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -154,12 +153,12 @@ Parameters
 ----------
 text : str
     The text to use for the calculation.
-    
+
 Returns
 -------
 float
     Char Frequency Metric.
-    
+
 Examples
 --------
 &gt;&gt;&gt; calculate_char_frequency_metric("PUENTECILLA KM. 1.7")
@@ -209,12 +208,12 @@ text : str
 opt : str
     The type of characters to consider for the calculation,
     can be one of 'vowels', 'consonants', or 'special_characters'.
-    
+
 Returns
 -------
 float
     Irregular Sequence Metric.
-    
+
 Examples
 --------
 &gt;&gt;&gt; calculate_irregular_sequence_metric("PUENTECILLA KM. 1.7", "vowels")
@@ -257,16 +256,16 @@ Parameters
 ----------
 text : str
     The text field to use for the calculation.
-    
+
 Returns
 -------
 float
     Number Count Metric.
-    
+
 Examples
 --------
 &gt;&gt;&gt; calculate_number_count_metric("ABC 123 !@#")
-0.0 
+0.0
 &gt;&gt;&gt; calculate_number_count_metric("ABC123 !@#")
 0.9
 </pre> 
